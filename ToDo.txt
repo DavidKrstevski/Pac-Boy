@@ -1,0 +1,4 @@
+Tiles mit 3 befüllten Seiten (Ghost Room)
+Collider
+Map bau
+Punkte Spawnen

@@ -31,19 +31,19 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetAxisRaw("Horizontal") == 1f)
         {
-            nextInput = new PlayerInput(1, 0, PlayerInput.State.Right);
+            nextInput = new PlayerInput(0.5f, 0, PlayerInput.State.Right);
         }
         else if (Input.GetAxisRaw("Horizontal") == -1f)
         {
-            nextInput = new PlayerInput(-1, 0, PlayerInput.State.Left);
+            nextInput = new PlayerInput(-0.5f, 0, PlayerInput.State.Left);
         }
         else if (Input.GetAxisRaw("Vertical") == 1f)
         {
-            nextInput = new PlayerInput(0, 1, PlayerInput.State.Up);
+            nextInput = new PlayerInput(0, 0.5f, PlayerInput.State.Up);
         }
         else if (Input.GetAxisRaw("Vertical") == -1f)
         {
-            nextInput = new PlayerInput(0, -1, PlayerInput.State.Down);
+            nextInput = new PlayerInput(0, -0.5f, PlayerInput.State.Down);
         }
     }
 
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         if (nextInput == null)
             return;
 
-        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(nextInput.X, nextInput.Y, 0f), .2f, mapLayer))
+        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(nextInput.X, nextInput.Y, 0f), .1f, mapLayer))
         {
             movePoint.position += new Vector3(nextInput.X, nextInput.Y, 0f);
             lastWorkingInput = nextInput;
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
             if (lastWorkingInput == null)
                 return;
 
-            if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(lastWorkingInput.X, lastWorkingInput.Y, 0f), .2f, mapLayer))
+            if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(lastWorkingInput.X, lastWorkingInput.Y, 0f), .1f, mapLayer))
             {
                 movePoint.position += new Vector3(lastWorkingInput.X, lastWorkingInput.Y, 0f);
             }
