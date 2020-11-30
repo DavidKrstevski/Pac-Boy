@@ -16,11 +16,10 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Point"))
         {
-            Debug.Log("Collided");
-
             collision.gameObject.SetActive(false);
 
-            //Add Points to Score
+            Score.instance.Add(1);
+
             //Check if all points have been collected
         }
     }
