@@ -18,9 +18,17 @@ public class Player : MonoBehaviour
         {
             collision.gameObject.SetActive(false);
 
-            Score.instance.Add(1);
+            LevelManager.instance.AddToScore(1);
 
             //Check if all points have been collected
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            LevelManager.instance.SubtractHeart();
         }
     }
 }
