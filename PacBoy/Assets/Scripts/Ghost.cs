@@ -53,6 +53,7 @@ public class Ghost : MonoBehaviour
             if (scatterTimer <= 0)
             {         
                 chaseTimer = chaseDuration;
+                scattering = false;
                 cornerDestinationSetter.enabled = false;
                 playerDestinationSetter.enabled = true;
             }

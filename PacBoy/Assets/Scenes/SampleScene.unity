@@ -8719,8 +8719,8 @@ GameObject:
   - component: {fileID: 1514875101}
   - component: {fileID: 1514875100}
   - component: {fileID: 1514875106}
-  - component: {fileID: 1514875104}
   - component: {fileID: 1514875103}
+  - component: {fileID: 1514875104}
   - component: {fileID: 1514875105}
   m_Layer: 0
   m_Name: Ghost_Red
